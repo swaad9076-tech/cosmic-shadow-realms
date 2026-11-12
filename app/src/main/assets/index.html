@@ -1,0 +1,1262 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>أساطير عوالم الظلال الكونية</title>
+<style>
+:root{
+  --bg:#070312; --card:rgba(28,19,58,.78); --card2:rgba(40,26,80,.7);
+  --line:rgba(150,110,255,.28); --txt:#f3edff; --mut:#a998cd;
+  --acc:#b48cff; --gold:#ffd166; --cyan:#58e1ff; --pink:#ff7bd5; --green:#6ff0b2; --red:#ff6b8a;
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--txt);
+  font-family:"Noto Naskh Arabic","Segoe UI",system-ui,-apple-system,sans-serif;
+  font-size:16px;line-height:1.6;min-height:100%}
+body{
+  background:
+    radial-gradient(1200px 700px at 85% -10%, rgba(120,60,220,.30), transparent 60%),
+    radial-gradient(900px 600px at -10% 30%, rgba(20,120,200,.18), transparent 60%),
+    radial-gradient(700px 500px at 50% 110%, rgba(230,70,180,.16), transparent 60%),
+    var(--bg);
+  background-attachment:fixed;
+}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.5;
+  background-image:
+    radial-gradient(1.6px 1.6px at 12% 18%, #fff, transparent),
+    radial-gradient(1.2px 1.2px at 78% 12%, #cfe6ff, transparent),
+    radial-gradient(1.6px 1.6px at 44% 68%, #ffe9b8, transparent),
+    radial-gradient(1.2px 1.2px at 88% 74%, #fff, transparent),
+    radial-gradient(1.4px 1.4px at 24% 88%, #d9c6ff, transparent),
+    radial-gradient(1.2px 1.2px at 62% 38%, #fff, transparent);
+  background-size:600px 600px;animation:tw 9s ease-in-out infinite alternate}
+@keyframes tw{from{opacity:.25}to{opacity:.6}}
+#app{max-width:760px;margin:0 auto;padding-bottom:86px;position:relative;z-index:1}
+.top{position:sticky;top:0;z-index:20;padding:10px 12px 8px;
+  background:linear-gradient(180deg,rgba(7,3,18,.96),rgba(7,3,18,.75));backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line)}
+.topRow{display:flex;align-items:center;gap:8px}
+.brand{font-weight:700;font-size:15px;color:var(--gold);flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.res{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:8px}
+.resCell{background:rgba(255,255,255,.05);border:1px solid var(--line);border-radius:12px;
+  padding:4px 6px;text-align:center;font-size:12.5px}
+.resCell b{display:block;font-size:14px;color:#fff}
+.main{padding:14px 12px}
+h1,h2,h3{margin:0;font-weight:700}
+.title{font-size:22px;line-height:1.35;margin-bottom:4px;
+  background:linear-gradient(90deg,#ffd166,#ff7bd5,#58e1ff);-webkit-background-clip:text;background-clip:text;color:transparent}
+.sub{color:var(--mut);font-size:13.5px;margin-bottom:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:14px;margin-bottom:12px;
+  box-shadow:0 10px 30px rgba(0,0,0,.28)}
+.card h3{font-size:16.5px;margin-bottom:6px}
+.card p{margin:0 0 10px;color:var(--mut);font-size:13.5px}
+.tiles{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.tile{background:linear-gradient(160deg,rgba(70,40,130,.6),rgba(20,14,45,.85));
+  border:1px solid var(--line);border-radius:18px;padding:14px;min-height:118px;
+  display:flex;flex-direction:column;justify-content:space-between;cursor:pointer;transition:transform .15s}
+.tile:active{transform:scale(.97)}
+.tile .ico{font-size:26px}
+.tile .tt{font-weight:700;font-size:15px;margin-top:6px}
+.tile .dd{font-size:11.5px;color:var(--mut);line-height:1.45}
+.badge{display:inline-block;background:rgba(255,209,102,.14);color:var(--gold);
+  border:1px solid rgba(255,209,102,.35);border-radius:999px;padding:2px 10px;font-size:11.5px;margin-inline-start:6px}
+.btn{display:block;width:100%;margin:8px 0;padding:13px 14px;border-radius:14px;
+  border:1px solid rgba(180,140,255,.4);background:linear-gradient(160deg,rgba(90,55,170,.75),rgba(45,25,95,.85));
+  color:#fff;font-family:inherit;font-size:15px;font-weight:600;text-align:center;cursor:pointer;
+  transition:transform .1s,opacity .2s}
+.btn:active{transform:scale(.98)}
+.btn[disabled]{opacity:.45}
+.btn.gold{background:linear-gradient(160deg,rgba(200,150,40,.85),rgba(120,80,15,.9));border-color:rgba(255,209,102,.55)}
+.btn.cyan{background:linear-gradient(160deg,rgba(30,130,180,.8),rgba(12,60,95,.9));border-color:rgba(88,225,255,.5)}
+.btn.pink{background:linear-gradient(160deg,rgba(190,60,150,.8),rgba(95,20,70,.9));border-color:rgba(255,123,213,.5)}
+.btn.ghost{background:rgba(255,255,255,.04);border-color:var(--line)}
+.btn.sm{font-size:13px;padding:9px 12px;margin:6px 0}
+.row{display:flex;gap:8px;flex-wrap:wrap}
+.row .btn{flex:1 1 46%;width:auto;margin:6px 0}
+.stat{display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px dashed rgba(255,255,255,.09);font-size:13.5px}
+.stat:last-child{border-bottom:0}
+.stat b{color:#fff}
+.mut{color:var(--mut);font-size:12.5px}
+.chip{display:inline-block;padding:3px 10px;border-radius:999px;font-size:12px;
+  background:rgba(255,255,255,.06);border:1px solid var(--line);margin:3px 3px 0 0}
+.chip.on{background:rgba(255,209,102,.18);border-color:rgba(255,209,102,.5);color:var(--gold)}
+.avatar{width:108px;height:108px;border-radius:50%;margin:4px auto 10px;position:relative;
+  background:radial-gradient(circle at 35% 30%, #fff3c4, #ff9ad6 45%, #7a46ff 80%, #2a1560);
+  box-shadow:0 0 32px rgba(180,140,255,.55), inset 0 0 24px rgba(255,255,255,.25);
+  display:flex;align-items:center;justify-content:center;font-size:52px}
+.avatar .hair{position:absolute;top:-8px;left:-6px;right:-6px;height:46%;border-radius:60% 60% 20% 20%;opacity:.92}
+.avatar .gown{position:absolute;bottom:-14px;left:-10px;right:-10px;height:40%;border-radius:50% 50% 14px 14px;opacity:.92}
+.photoCard{position:relative;border-radius:18px;overflow:hidden;padding:18px 14px;text-align:center;border:1px solid var(--line)}
+.bgNebula{background:radial-gradient(circle at 30% 20%,#6b2bd9,#1a0b3d 65%,#090418)}
+.bgPlanet{background:radial-gradient(circle at 70% 80%,#0f6d8c,#0a1a3a 60%,#05020e)}
+.bgPalace{background:radial-gradient(circle at 50% 10%,#8b3a8f,#2a0d33 60%,#0d0412)}
+.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:92px;z-index:60;
+  background:rgba(30,18,60,.95);border:1px solid var(--acc);border-radius:14px;padding:10px 16px;
+  font-size:13.5px;max-width:86%;text-align:center;box-shadow:0 10px 30px rgba(0,0,0,.5);
+  opacity:0;transition:opacity .25s,transform .25s;pointer-events:none}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(-6px)}
+.bottom{position:fixed;left:0;right:0;bottom:0;z-index:30;display:flex;gap:8px;padding:10px 12px 14px;
+  background:linear-gradient(0deg,rgba(7,3,18,.98),rgba(7,3,18,.7));border-top:1px solid var(--line)}
+.bottom .btn{margin:0;flex:1}
+.meter{height:8px;border-radius:99px;background:rgba(255,255,255,.08);overflow:hidden;margin-top:6px}
+.meter i{display:block;height:100%;background:linear-gradient(90deg,var(--cyan),var(--acc),var(--pink))}
+.small{font-size:12px;color:var(--mut)}
+.glow{animation:glow 2.4s ease-in-out infinite alternate}
+@keyframes glow{from{box-shadow:0 0 10px rgba(180,140,255,.3)}to{box-shadow:0 0 26px rgba(255,123,213,.55)}}
+.comboRow{display:flex;gap:6px;flex-wrap:wrap}
+.comboRow .chip{cursor:pointer;padding:8px 12px;font-size:13px}
+.rank{display:flex;justify-content:space-between;padding:6px 0;font-size:13.5px}
+.rank.top{color:var(--gold);font-weight:700}
+</style>
+</head>
+<body>
+<div id="app"></div>
+<div id="toast" class="toast"></div>
+<script>
+"use strict";
+/* ================= الحالة ================= */
+var LS = "cosmic_v1";
+var ICON = {coin:"🪙", dark:"🌀", rare:"💎", crystal:"✨", food:"🌿"};
+var RNAME = {coin:"نجمية", dark:"طاقة مظلمة", rare:"عناصر نادرة", crystal:"بلورات", food:"غذاء"};
+
+function defState(){
+  return {
+    coin: 900, dark: 70, rare: 25, crystal: 14, food: 40,
+    ship: {weap:1, shield:1, engine:1, eShield:34, eWeap:33, eSpeed:33},
+    upg: {gear:0},
+    drones: 0, scans: 0, routes: 0, threats: 0,
+    planets: 0, colony: {defense:0, reactor:0, lab:0, dome:0, recycle:0}, allies: [], debris: 0,
+    girl: {hair:"long", hairColor:"#ffd166", gown:"classic", gownColor:"#b48cff", makeup:"", outfits:[], palace:{}, photos:0, contestDay:""},
+    battles: {win:0, def:0, duel:0, towers:1, wave:0},
+    tech: {creed:0, leaders:[0,0,0], dark:0, archive:[]},
+    story: 0,
+    daily: {date:"", battle:0, outfit:0, photo:0, claimed:[]},
+    seasonClaimed: [],
+    xp: 0,
+    cd: {},
+    muted: false
+  };
+}
+function deepMerge(a, b){
+  var o = {}, k;
+  for (k in a) o[k] = a[k];
+  for (k in b){
+    if (b[k] && typeof b[k] === "object" && !Array.isArray(b[k]) && a[k] && typeof a[k] === "object" && !Array.isArray(a[k]))
+      o[k] = deepMerge(a[k], b[k]);
+    else o[k] = b[k];
+  }
+  return o;
+}
+function load(){
+  try{
+    var raw = localStorage.getItem(LS);
+    if (!raw) return defState();
+    return deepMerge(defState(), JSON.parse(raw));
+  }catch(e){ return defState(); }
+}
+var S = load();
+function save(){ try{ localStorage.setItem(LS, JSON.stringify(S)); }catch(e){} }
+function resetState(){ S = defState(); save(); render(); toast("بدأت رحلة جديدة بين العوالم"); }
+
+var SCREEN = "home", PARAMS = {}, STACK = [];
+var T = {};
+
+/* ================= أدوات ================= */
+function $(id){ return document.getElementById(id); }
+var app = document.getElementById("app");
+function has(n){ return (S[n] || 0) > 0; }
+function fmt(n){ return String(Math.round(n||0)); }
+function rnd(a,b){ return Math.floor(Math.random()*(b-a+1))+a; }
+function todayStr(){ var d = new Date(); return d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate(); }
+
+var sfxObj = {};
+function sfx(name){
+  try{
+    var a = sfxObj[name];
+    if (!a){ a = new Audio("sfx/"+name+".mp3"); sfxObj[name] = a; }
+    a.currentTime = 0;
+    a.play().catch(function(){});
+  }catch(e){}
+}
+function say(text){
+  if (!text || S.muted) return;
+  try{
+    if (window.Native && Native.speak) { Native.speak(text); return; }
+    if (window.speechSynthesis){
+      var u = new SpeechSynthesisUtterance(text);
+      u.lang = "ar"; u.rate = .96; window.speechSynthesis.cancel();
+      window.speechSynthesis.speak(u);
+    }
+  }catch(e){}
+}
+function toast(msg){
+  var t = $("toast");
+  t.textContent = msg; t.classList.add("show");
+  clearTimeout(toast._t);
+  toast._t = setTimeout(function(){ t.classList.remove("show"); }, 2600);
+}
+function rewardText(g){
+  var parts = [];
+  for (var k in g) if (g[k]) parts.push("+"+fmt(g[k])+" "+ICON[k]);
+  return parts.join(" ");
+}
+function give(g, quiet){
+  for (var k in g){ S[k] = (S[k]||0) + g[k]; }
+  if (!quiet) toast(rewardText(g));
+  save();
+}
+function canPay(c){
+  for (var k in c) if ((S[k]||0) < c[k]) return false;
+  return true;
+}
+function payText(c){
+  var p = [];
+  for (var k in c) if (c[k]) p.push(fmt(c[k])+" "+ICON[k]);
+  return p.join(" + ");
+}
+function pay(c){
+  if (!canPay(c)){ sfx("error"); toast("محتاجة "+payText(c)); return false; }
+  for (var k in c) S[k] -= c[k];
+  save(); return true;
+}
+function addXp(n){ S.xp = (S.xp||0)+n; }
+function level(){ return 1 + Math.floor((S.xp||0)/120); }
+
+/* كولداون */
+function cdLeft(key){
+  var t = S.cd[key] || 0;
+  return Math.max(0, Math.ceil((t - Date.now())/1000));
+}
+function startCd(key, sec){ S.cd[key] = Date.now() + sec*1000; save(); }
+function cdBtn(label, action, arg, key, cls){
+  var left = cdLeft(key);
+  var dis = left > 0 ? " disabled" : "";
+  var txt = left > 0 ? label + " · " + left + "ث" : label;
+  return '<button class="btn '+(cls||"")+'" data-cd="'+key+'" data-label="'+label+'"'+dis+
+    ' onclick="act(\''+action+'\',\''+arg+'\')">'+txt+'</button>';
+}
+function refreshCooldowns(){
+  var list = document.querySelectorAll("[data-cd]");
+  for (var i=0;i<list.length;i++){
+    var b = list[i], key = b.getAttribute("data-cd"), label = b.getAttribute("data-label");
+    var left = cdLeft(key);
+    if (left > 0){ b.disabled = true; b.textContent = label + " · " + left + "ث"; }
+    else { b.disabled = false; b.textContent = label; }
+  }
+}
+setInterval(refreshCooldowns, 1000);
+
+/* ================= التنقل ================= */
+function go(id, p){
+  STACK.push({id: SCREEN, p: PARAMS});
+  SCREEN = id; PARAMS = p || {}; T = {};
+  render(); window.scrollTo(0,0);
+}
+function gameBack(){
+  if (STACK.length){
+    var s = STACK.pop();
+    SCREEN = s.id; PARAMS = s.p; render(); window.scrollTo(0,0);
+    return true;
+  }
+  return false;
+}
+function homeGo(){ STACK = []; SCREEN = "home"; PARAMS = {}; render(); window.scrollTo(0,0); }
+window.gameBack = gameBack;
+
+/* ================= القوة ================= */
+function leaderSum(){ return (S.tech.leaders||[0,0,0]).reduce(function(a,b){return a+b;},0); }
+function power(){
+  var cb = S.tech.creed === "shadow" ? 6 : (S.tech.creed === "warp" ? 5 : (S.tech.creed === "glass" ? 4 : 0));
+  return 12 + S.ship.weap*7 + S.upg.gear*3 + cb + (S.tech.archive||[]).length*4 + leaderSum()*3;
+}
+function armor(){
+  return 6 + S.ship.shield*5 + S.colony.defense*4 + S.battles.towers*3 + Math.floor(S.ship.eShield/12);
+}
+function dodge(){ return Math.min(.35, S.ship.eSpeed/300); }
+
+/* ================= الواجهة ================= */
+function headerHTML(){
+  return '<div class="top"><div class="topRow">'+
+    '<div class="brand">أساطير عوالم الظلال الكونية</div>'+
+    '<button class="btn sm ghost" style="width:auto;margin:0" onclick="act(\'mute\')">'+(S.muted?"🔇":"🔊")+'</button>'+
+    '</div><div class="res">'+
+    '<div class="resCell">🪙<b>'+fmt(S.coin)+'</b></div>'+
+    '<div class="resCell">🌀<b>'+fmt(S.dark)+'</b></div>'+
+    '<div class="resCell">💎<b>'+fmt(S.rare)+'</b></div>'+
+    '<div class="resCell">✨<b>'+fmt(S.crystal)+'</b></div>'+
+    '</div></div>';
+}
+function bottomHTML(){
+  return '<div class="bottom">'+
+    '<button class="btn ghost" onclick="homeGo()">🏠 الرئيسية</button>'+
+    (STACK.length ? '<button class="btn ghost" onclick="gameBack()">↩ رجوع</button>' : '')+
+    '</div>';
+}
+function render(){
+  var fn = SCREENS[SCREEN] || SCREENS.home;
+  app.innerHTML = headerHTML() + '<div class="main">' + fn() + '</div>' + bottomHTML();
+  refreshCooldowns();
+}
+var SCREENS = {};
+
+/* ================= الرئيسية ================= */
+var SECTIONS = [
+  {id:"ship",  ic:"🚀", t:"سفينة القيادة الأم", d:"الملاحة، الرادار، الدروع، الطاقة، المسيرات"},
+  {id:"colony",ic:"🪐", t:"إدارة الكواكب والمستعمرات", d:"الموارد، البناء، التجارة، الزراعة، التدوير"},
+  {id:"style", ic:"👑", t:"بنات الأكوان والموضة", d:"استوديو الأزياء، الصالون، القصر، المسابقات، الصور"},
+  {id:"war",   ic:"⚔️", t:"المعارك الفضائية وحروب الظلام", d:"غرفة العمليات، الدفاع، الألغاز، المبارزات، الأبراج"},
+  {id:"tech",  ic:"🧪", t:"التطوير والتقنيات المحظورة", d:"المعمل السري، أكاديمية القادة، الطاقة المظلمة، الأرشيف"},
+  {id:"quest", ic:"📜", t:"المهام والقصة التفاعلية", d:"المهام الرئيسية، اليومية، الإنجازات، الأحداث الموسمية"}
+];
+
+SCREENS.home = function(){
+  var tiles = SECTIONS.map(function(s){
+    return '<div class="tile" onclick="go(\''+s.id+'\')">'+
+      '<div><div class="ico">'+s.ic+'</div><div class="tt">'+s.t+'</div></div>'+
+      '<div class="dd">'+s.d+'</div></div>';
+  }).join("");
+  var storyBadge = S.story < 6 ? "المهمة "+(S.story+1) : "اكتملت القصة";
+  return '<div class="title">أساطير عوالم الظلال الكونية</div>'+
+    '<div class="sub">المستوى '+level()+' · '+fmt(S.planets)+' كوكب · '+fmt(S.battles.win)+' انتصار · '+storyBadge+'</div>'+
+    '<div class="card glow">'+
+      '<h3>إمبراطوريتك اليوم</h3>'+
+      '<div class="stat"><span>قوة الأسطول</span><b>'+power()+'</b></div>'+
+      '<div class="stat"><span>قوة الدروع</span><b>'+armor()+'</b></div>'+
+      '<div class="stat"><span>التحالفات</span><b>'+S.allies.length+' / 3</b></div>'+
+      '<div class="stat"><span>أطقم المسيرات</span><b>'+fmt(S.drones)+'</b></div>'+
+    '</div>'+
+    '<div class="card"><h3>استلام إمدادات الأسطول</h3><p>إمدادات الطاقة والنجوم تتجدد كل دقيقة.</p>'+
+      cdBtn("📦 استلام الإمدادات (60 🪙 + 15 🌀)", "supply", "", "supply", "gold")+
+    '</div>'+
+    '<div class="tiles">'+tiles+'</div>';
+};
+
+/* ================= القسم 1: السفينة ================= */
+SCREENS.ship = function(){
+  return '<div class="title">سفينة القيادة الأم</div>'+
+    '<div class="sub">قلب أسطولك في الظلال الكونية</div>'+
+    '<div class="card"><h3>حالة السفينة</h3>'+
+      '<div class="stat"><span>الأسلحة</span><b>مستوى '+S.ship.weap+'</b></div>'+
+      '<div class="stat"><span>الدروع</span><b>مستوى '+S.ship.shield+'</b></div>'+
+      '<div class="stat"><span>محركات الالتواء</span><b>مستوى '+S.ship.engine+'</b></div>'+
+      '<div class="stat"><span>قوة المعركة</span><b>'+power()+'</b></div>'+
+    '</div>'+
+    '<button class="btn cyan" onclick="go(\'nav\')">🧭 مركز الملاحة الكونية</button>'+
+    '<button class="btn" onclick="go(\'radar\')">📡 رادار رصد التهديدات</button>'+
+    '<button class="btn" onclick="go(\'armory\')">🛡️ غرفة التجهيز والدروع</button>'+
+    '<button class="btn" onclick="go(\'energy\')">⚡ محطة التحكم بالطاقة المركزية</button>'+
+    '<button class="btn pink" onclick="go(\'drones\')">🛰️ منصة إطلاق المسيرات الذكية</button>';
+};
+
+/* الملاحة */
+var ROUTES = [
+  {n:"سديم الأحلام البنفسجي", c:{crystal:3}, ic:"🌌", d:"سحب غازية هادئة، بلورات طافية بين النجوم"},
+  {n:"حزام الكويكبات الحديدي", c:{crystal:4}, ic:"🪨", d:"معادن نادرة لكن الطريق خطر"},
+  {n:"بوابة الظلال العميقة", c:{crystal:6}, ic:"🕳️", d:"طريق مجهول، مكافآته لا تُقدر"}
+];
+SCREENS.nav = function(){
+  var html = '<div class="title">مركز الملاحة الكونية</div><div class="sub">اختاري مسارًا لتشغيل محركات الالتواء</div>';
+  ROUTES.forEach(function(r,i){
+    html += '<div class="card"><h3>'+r.ic+' '+r.n+'</h3><p>'+r.d+'</p>'+
+      '<div class="small">تكلفة المسار: '+payText(r.c)+'</div>'+
+      '<button class="btn cyan" onclick="act(\'route\','+i+')">تشغيل محركات الالتواء</button></div>';
+  });
+  html += '<div class="card"><h3>سجل الرحلات</h3><div class="stat"><span>رحلات مكتملة</span><b>'+S.routes+'</b></div></div>';
+  return html;
+};
+
+/* الرادار */
+SCREENS.radar = function(){
+  var t = T.threat;
+  var html = '<div class="title">رادار رصد التهديدات</div><div class="sub">راقبي تحركات أساطيل قوى الشر المظلمة</div>';
+  html += '<div class="card"><h3>نتيجة المسح</h3>';
+  if (!t){
+    html += '<p>الرادار صامت… امسحي الفضاء لكشف ما يختبئ في الظلال.</p>'+
+      '<button class="btn cyan" onclick="act(\'scan\')">📡 مسح الفضاء (2 ✨)</button>';
+  } else {
+    html += '<div class="stat"><span>التهديد المكتشف</span><b>'+t.name+'</b></div>'+
+      '<div class="stat"><span>قوة العدو</span><b>'+t.power+'</b></div>'+
+      '<div class="stat"><span>دروعك الحالية</span><b>'+armor()+'</b></div>';
+    if (t.done === "win") html += '<p style="color:var(--green)">تم صد التهديد بنجاح، وغنمنا غنائمه.</p>';
+    else if (t.done === "lose") html += '<p style="color:var(--red)">اخترق العدو دروعك وفرّ محمّلًا ببعض طاقتك.</p>';
+    else html += '<button class="btn gold" onclick="act(\'repel\')">🛡️ التصدي للتهديد</button>';
+    html += '<button class="btn ghost" onclick="act(\'scan\')">مسح جديد (2 ✨)</button>';
+  }
+  html += '</div>';
+  html += '<div class="card"><h3>إحصائيات الرصد</h3><div class="stat"><span>عمليات مسح</span><b>'+S.scans+'</b></div>'+
+    '<div class="stat"><span>تهديدات صُدّت</span><b>'+S.threats+'</b></div></div>';
+  return html;
+};
+
+/* التجهيز */
+SCREENS.armory = function(){
+  var wc = {dark: 20 + S.ship.weap*12, rare: 4 + S.ship.weap*2};
+  var sc = {dark: 18 + S.ship.shield*10, crystal: 3 + S.ship.shield};
+  var gc = {dark: 25 + S.upg.gear*15, rare: 6 + S.upg.gear*3};
+  var ec = {dark: 30 + S.ship.engine*18, crystal: 5 + S.ship.engine*2};
+  return '<div class="title">غرفة التجهيز والدروع</div><div class="sub">طوّري أسلحة السفينة ودروعها وعتاد الطاقم</div>'+
+    '<div class="card"><h3>⚔️ الأسلحة</h3><div class="small">مستوى '+S.ship.weap+' · قوة +'+(S.ship.weap*7)+'</div>'+
+      '<div class="small">التكلفة: '+payText(wc)+'</div>'+
+      '<button class="btn" onclick="act(\'upg\',\'weap\')">ترقية الأسلحة</button></div>'+
+    '<div class="card"><h3>🛡️ دروع الحماية الكونية</h3><div class="small">مستوى '+S.ship.shield+' · دروع +'+(S.ship.shield*5)+'</div>'+
+      '<div class="small">التكلفة: '+payText(sc)+'</div>'+
+      '<button class="btn" onclick="act(\'upg\',\'shield\')">ترقية الدروع</button></div>'+
+    '<div class="card"><h3>🧰 عتاد الطاقم والآليات</h3><div class="small">مستوى '+S.upg.gear+' · قوة +'+(S.upg.gear*3)+'</div>'+
+      '<div class="small">التكلفة: '+payText(gc)+'</div>'+
+      '<button class="btn" onclick="act(\'upg\',\'gear\')">ترقية العتاد</button></div>'+
+    '<div class="card"><h3>🌠 محركات الالتواء</h3><div class="small">مستوى '+S.ship.engine+' · قدرة دفع أعلى في المعارك</div>'+
+      '<div class="small">التكلفة: '+payText(ec)+'</div>'+
+      '<button class="btn" onclick="act(\'upg\',\'engine\')">ترقية المحركات</button></div>';
+};
+
+/* الطاقة */
+SCREENS.energy = function(){
+  var s = S.ship;
+  return '<div class="title">محطة التحكم بالطاقة المركزية</div><div class="sub">وزّعي 100% من طاقة المحرك بين الدروع والأسلحة والسرعة</div>'+
+    '<div class="card">'+
+      '<div class="stat"><span>الدفع للدروع</span><b>'+s.eShield+'%</b><div class="meter"><i style="width:'+s.eShield+'%"></i></div></div>'+
+      '<div class="stat"><span>الدفع للأسلحة</span><b>'+s.eWeap+'%</b><div class="meter"><i style="width:'+s.eWeap+'%"></i></div></div>'+
+      '<div class="stat"><span>الدفع للسرعة</span><b>'+s.eSpeed+'%</b><div class="meter"><i style="width:'+s.eSpeed+'%"></i></div></div>'+
+      '<div class="row">'+
+        '<button class="btn sm" onclick="act(\'alloc\',\'eShield,+5\')">دروع +5</button>'+
+        '<button class="btn sm" onclick="act(\'alloc\',\'eShield,-5\')">دروع -5</button>'+
+        '<button class="btn sm" onclick="act(\'alloc\',\'eWeap,+5\')">أسلحة +5</button>'+
+        '<button class="btn sm" onclick="act(\'alloc\',\'eWeap,-5\')">أسلحة -5</button>'+
+        '<button class="btn sm" onclick="act(\'alloc\',\'eSpeed,+5\')">سرعة +5</button>'+
+        '<button class="btn sm" onclick="act(\'alloc\',\'eSpeed,-5\')">سرعة -5</button>'+
+      '</div>'+
+      '<button class="btn gold" onclick="act(\'preset\',\'def\')">توزيع دفاعي (دروع 60)</button>'+
+      '<button class="btn pink" onclick="act(\'preset\',\'atk\')">توزيع هجومي (أسلحة 60)</button>'+
+      '<button class="btn cyan" onclick="act(\'preset\',\'bal\')">توزيع متوازن</button>'+
+    '</div>'+
+    '<div class="card"><h3>الأثر الحالي</h3>'+
+      '<div class="stat"><span>مكافأة الهجوم</span><b>+'+Math.round(s.eWeap*0.15)+'</b></div>'+
+      '<div class="stat"><span>مكافأة الدروع</span><b>+'+Math.floor(s.eShield/12)+'</b></div>'+
+      '<div class="stat"><span>فرصة التملّص</span><b>'+Math.round(dodge()*100)+'%</b></div>'+
+    '</div>';
+};
+
+/* المسيرات */
+SCREENS.drones = function(){
+  return '<div class="title">منصة إطلاق المسيرات الذكية</div><div class="sub">روبوتات استطلاع صغيرة لاستكشاف الفضاء وجمع البيانات</div>'+
+    '<div class="card"><h3>الأسطول الجاهز</h3>'+
+      '<div class="stat"><span>مسيرات متاحة</span><b>'+S.drones+'</b></div>'+
+      '<div class="small">المسيرة الواحدة تجلب عناصر نادرة ومعلومات عن أضعف نقاط العدو.</div>'+
+      '<button class="btn cyan" onclick="act(\'droneBuy\')">تصنيع مسيرة (12 🌀 + 4 💎)</button>'+
+      '<button class="btn" onclick="act(\'droneSend\')">إطلاق مسيرة استطلاع</button>'+
+    '</div>'+
+    '<div class="card"><h3>بيانات الاستطلاع</h3>'+
+      '<div class="stat"><span>مسيرات أُطلقت</span><b>'+fmt(S.droneLaunched||0)+'</b></div>'+
+      '<div class="small">كل مسيرة ترسل إشارة قبل أن تفنى، تحمل معها عناصر نادرة.</div>'+
+    '</div>';
+};
+
+/* ================= القسم 2: الكواكب ================= */
+SCREENS.colony = function(){
+  return '<div class="title">إدارة الكواكب والمستعمرات</div><div class="sub">'+fmt(S.planets)+' كوكب تحت حكمك</div>'+
+    '<div class="card"><h3>📊 لوحة إدارة الموارد</h3>'+
+      '<div class="stat"><span>الطاقة المظلمة</span><b>'+fmt(S.dark)+' 🌀</b></div>'+
+      '<div class="stat"><span>العناصر النادرة</span><b>'+fmt(S.rare)+' 💎</b></div>'+
+      '<div class="stat"><span>بلورات الطاقة السحرية</span><b>'+fmt(S.crystal)+' ✨</b></div>'+
+      '<div class="stat"><span>الغذاء الفضائي</span><b>'+fmt(S.food)+' 🌿</b></div>'+
+    '</div>'+
+    '<button class="btn" onclick="go(\'build\')">🏗️ واجهة الإنشاء العمراني</button>'+
+    '<button class="btn cyan" onclick="go(\'trade\')">🤝 شبكة التجارة والدبلوماسية</button>'+
+    '<button class="btn" onclick="go(\'farm\')">🌱 قطاع الزراعة الحيوية الفضائية</button>'+
+    '<button class="btn pink" onclick="go(\'recycle\')">♻️ مصانع إعادة التدوير الآلية</button>';
+};
+
+SCREENS.build = function(){
+  var b = S.colony;
+  var items = [
+    {k:"defense", n:"القواعد الدفاعية", ic:"🛡️", c:{dark:25+b.defense*18, rare:5+b.defense*4}, eff:"دروع +"+(b.defense*4)},
+    {k:"reactor", n:"المفاعلات النووية", ic:"☢️", c:{dark:20+b.reactor*15, crystal:2+b.reactor}, eff:"إنتاج طاقة عند التجميع +"+(10+b.reactor*6)},
+    {k:"lab", n:"مختبرات الأبحاث الفضائية", ic:"🔬", c:{dark:30+b.lab*18, rare:8+b.lab*5}, eff:"بلورات عند التجميع +"+(3+b.lab*2)},
+    {k:"dome", n:"مزارع القبة الزجاجية", ic:"🏛️", c:{coin:200+b.dome*140, dark:15+b.dome*10}, eff:"غذاء عند الحصاد +"+(15+b.dome*10)},
+    {k:"recycle", n:"مصانع التدوير الآلية", ic:"♻️", c:{coin:250+b.recycle*150, dark:20+b.recycle*12}, eff:"عناصر نادرة من الحطام +"+(2+b.recycle)}
+  ];
+  var html = '<div class="title">واجهة الإنشاء العمراني</div><div class="sub">قواعد دفاعية ومفاعلات ومختبرات فوق كواكبك</div>';
+  items.forEach(function(it){
+    html += '<div class="card"><h3>'+it.ic+' '+it.n+'</h3>'+
+      '<div class="small">المستوى '+b[it.k]+' · '+it.eff+'</div>'+
+      '<div class="small">التكلفة: '+payText(it.c)+'</div>'+
+      '<button class="btn" onclick="act(\'build\',\''+it.k+'\')">بناء / ترقية</button></div>';
+  });
+  return html;
+};
+
+var RACES = [
+  {id:"zur", n:"الزورانيون", ic:"🛸", d:"حضارة تقنية تبادلك الطاقة مقابل معادن", ally:{crystal:10}},
+  {id:"cry", n:"الكريستاليون", ic:"💠", d:"مخلوقات بلورية تحب الضوء والغنائم", ally:{crystal:12}},
+  {id:"shadow", n:"سكان الظل", ic:"🌑", d:"أسياد الطرق الخفية، حلفهم نادر وثمين", ally:{rare:20}}
+];
+SCREENS.trade = function(){
+  var html = '<div class="title">شبكة التجارة والدبلوماسية</div><div class="sub">عقد تحالفات وتبادل موارد عبر المجرات</div>';
+  RACES.forEach(function(r){
+    var allied = S.allies.indexOf(r.id) >= 0;
+    html += '<div class="card"><h3>'+r.ic+' '+r.n+'</h3><p>'+r.d+'</p>'+
+      (allied ? '<div class="chip on">تحالف قائم</div>' : '<button class="btn" onclick="act(\'ally\',\''+r.id+'\')">عقد تحالف ('+payText(r.ally)+')</button>')+
+      '<div class="row">'+
+        '<button class="btn sm cyan" onclick="act(\'exch\',\'darkrare\')">10 🌀 ← 12 💎</button>'+
+        '<button class="btn sm gold" onclick="act(\'exch\',\'rarecrys\')">15 💎 ← 5 ✨</button>'+
+      '</div></div>';
+  });
+  html += '<div class="card"><h3>التحالفات</h3><div class="stat"><span>حلفاء</span><b>'+S.allies.length+' / 3</b></div>'+
+    '<div class="small">كل تحالف يمنحك خصمًا في التجارة ومكافأة عند سقوط الكواكب.</div></div>';
+  return html;
+};
+
+SCREENS.farm = function(){
+  var d = S.colony.dome;
+  return '<div class="title">قطاع الزراعة الحيوية الفضائية</div><div class="sub">مزارع القبة الزجاجية تغذي الطاقم والمستعمرات</div>'+
+    '<div class="card"><h3>🌱 القبة الزراعية</h3>'+
+      '<div class="stat"><span>مستوى القبة</span><b>'+d+'</b></div>'+
+      '<div class="stat"><span>مخزون الغذاء</span><b>'+fmt(S.food)+' 🌿</b></div>'+
+      '<button class="btn" onclick="act(\'plant\')">زراعة بذور فضائية (25 🪙)</button>'+
+      cdBtn("حصاد المحصول", "harvest", "", "harvest", "gold")+
+      '<button class="btn ghost" onclick="act(\'sellFood\')">بيع 20 🌿 مقابل 60 🪙</button>'+
+    '</div>';
+};
+
+SCREENS.recycle = function(){
+  var r = S.colony.recycle;
+  return '<div class="title">مصانع إعادة التدوير الآلية</div><div class="sub">حوّلي مخلفات المعارك إلى مواد خام</div>'+
+    '<div class="card"><h3>♻️ خط التدوير</h3>'+
+      '<div class="stat"><span>مستوى المصنع</span><b>'+r+'</b></div>'+
+      '<div class="stat"><span>حطام المعارك</span><b>'+fmt(S.debris)+'</b></div>'+
+      '<button class="btn" onclick="act(\'recycle\')">تدوير حطام (يحتاج 1 حطام)</button>'+
+      '<div class="small">كل عملية تعطيك '+(2+r)+' عناصر نادرة.</div>'+
+    '</div>';
+};
+
+/* ================= القسم 3: الموضة ================= */
+var HAIR = [{id:"long",n:"طويل منسدل"},{id:"wavy",n:"مموج كوني"},{id:"short",n:"قصير جريء"},{id:"braids",n:"ضفائر نجمية"}];
+var HAIRC = [{v:"#ffd166",n:"ذهبي"},{v:"#b48cff",n:"بنفسجي"},{v:"#d8dbe8",n:"فضي"},{v:"#ff7bd5",n:"وردي"},{v:"#58e1ff",n:"سماوي"}];
+var GOWNS = [{id:"classic",n:"فستان كلاسيكي"},{id:"royal",n:"فستان ملكي"},{id:"star",n:"فستان النجوم"},{id:"armor",n:"درع أنيق مضيء"}];
+var GOWNC = [{v:"#b48cff",n:"بنفسجي"},{v:"#58e1ff",n:"سماوي"},{v:"#ff7bd5",n:"وردي"},{v:"#ffd166",n:"ذهبي"},{v:"#6ff0b2",n:"زمردي"},{v:"#ff6b8a",n:"أحمر"}];
+var MAKEUP = [{id:"",n:"بدون"},{id:"star",n:"نجوم فضية"},{id:"fire",n:"شفق ناري"},{id:"moon",n:"قمر بارد"}];
+
+function avatarHTML(){
+  var g = S.girl;
+  var hairStyle = g.hair === "short" ? "38%" : (g.hair === "wavy" ? "52%" : "56%");
+  var gown = g.gown === "armor" ? "linear-gradient(180deg,#cfe9ff,#5aa8ff)" : g.gownColor;
+  return '<div class="avatar">👸'+
+    '<div class="hair" style="height:'+hairStyle+';background:'+g.hairColor+';'+(g.hair==="braids"?"border-radius:50%":"")+'"></div>'+
+    '<div class="gown" style="background:'+gown+'"></div>'+
+    '</div>';
+}
+SCREENS.style = function(){
+  return '<div class="title">بنات الأكوان والموضة الكونية</div><div class="sub">بطلة المجرة: '+S.girl.name+'</div>'+
+    '<div class="card" style="text-align:center">'+avatarHTML()+
+      '<div class="small">'+GOWNS.filter(function(x){return x.id===S.girl.gown;})[0].n+' · '+S.girl.outfits.length+' تصميم في الخزانة</div></div>'+
+    '<button class="btn pink" onclick="go(\'studio\')">👗 استوديو تصميم الأزياء الفضائية</button>'+
+    '<button class="btn" onclick="go(\'salon\')">💅 صالون وتجميل المجرات</button>'+
+    '<button class="btn gold" onclick="go(\'palace\')">🏰 قصر الاسترخاء الملكي</button>'+
+    '<button class="btn cyan" onclick="go(\'contest\')">🏆 منصة العروض الكونية التنافسية</button>'+
+    '<button class="btn" onclick="go(\'photo\')">📸 استوديو التقاط الصور الفضائية</button>';
+};
+
+SCREENS.studio = function(){
+  var g = S.girl;
+  var html = '<div class="title">استوديو تصميم الأزياء الفضائية</div><div class="sub">صممي إطلالة ثلاثية الأبعاد للبطلة</div>'+
+    '<div class="card" style="text-align:center">'+avatarHTML()+
+      '<div class="small">التصميم الحالي: '+GOWNS.filter(function(x){return x.id===g.gown;})[0].n+'</div></div>';
+  html += '<div class="card"><h3>نوع الفستان</h3><div class="comboRow">';
+  GOWNS.forEach(function(x){ html += '<span class="chip '+(g.gown===x.id?"on":"")+'" onclick="act(\'selGown\',\''+x.id+'\')">'+x.n+'</span>'; });
+  html += '</div></div>';
+  html += '<div class="card"><h3>لون الفستان</h3><div class="comboRow">';
+  GOWNC.forEach(function(x){ html += '<span class="chip '+(g.gownColor===x.v?"on":"")+'" style="border-color:'+x.v+'" onclick="act(\'selGownColor\',\''+x.v+'\')">'+x.n+'</span>'; });
+  html += '</div></div>';
+  html += '<button class="btn gold" onclick="act(\'saveOutfit\')">✨ حفظ التصميم في الخزانة</button>';
+  if (S.girl.outfits.length){
+    html += '<div class="card"><h3>خزانة التصاميم ('+S.girl.outfits.length+')</h3><div class="comboRow">';
+    S.girl.outfits.forEach(function(o){ html += '<span class="chip on">'+o.n+'</span>'; });
+    html += '</div></div>';
+  }
+  return html;
+};
+
+SCREENS.salon = function(){
+  var g = S.girl;
+  var html = '<div class="title">صالون وتجميل المجرات</div><div class="sub">عدّلي مظهر البطلة وروبوتاتها المساعدة</div>'+
+    '<div class="card" style="text-align:center">'+avatarHTML()+'</div>';
+  html += '<div class="card"><h3>تسريحة الشعر</h3><div class="comboRow">';
+  HAIR.forEach(function(x){ html += '<span class="chip '+(g.hair===x.id?"on":"")+'" onclick="act(\'hair\',\''+x.id+'\')">'+x.n+'</span>'; });
+  html += '</div></div>';
+  html += '<div class="card"><h3>لون الشعر</h3><div class="comboRow">';
+  HAIRC.forEach(function(x){ html += '<span class="chip '+(g.hairColor===x.v?"on":"")+'" style="border-color:'+x.v+'" onclick="act(\'hairColor\',\''+x.v+'\')">'+x.n+'</span>'; });
+  html += '</div></div>';
+  html += '<div class="card"><h3>مكياج المجرة</h3><div class="comboRow">';
+  MAKEUP.forEach(function(x){ html += '<span class="chip '+(g.makeup===x.id?"on":"")+'" onclick="act(\'makeup\',\''+x.id+'\')">'+x.n+'</span>'; });
+  html += '</div></div>';
+  return html;
+};
+
+var PALACE = [
+  {id:"throne", n:"قاعة العرش", ic:"👑", d:"عرش من البلور المضيء وسجاد من نجوم"},
+  {id:"relax", n:"غرفة الاسترخاء", ic:"🛋️", d:"أرائك سحابية وإضاءة شفق"},
+  {id:"garden", n:"حدائق القمر", ic:"🌙", d:"زهور فضية تتفتح تحت قمرين"},
+  {id:"pool", n:"مسبح النجوم", ic:"🌊", d:"ماء يتلألأ بغبار المجرات"}
+];
+SCREENS.palace = function(){
+  var html = '<div class="title">قصر الاسترخاء الملكي</div><div class="sub">زيّني قصور البطلات وقواعد الاستراحة</div>';
+  PALACE.forEach(function(p){
+    var lvl = S.girl.palace[p.id] || 0;
+    var cost = 150 + lvl*120;
+    html += '<div class="card"><h3>'+p.ic+' '+p.n+'</h3><p>'+p.d+'</p>'+
+      '<div class="stat"><span>مستوى التزيين</span><b>'+lvl+' / 5</b></div>'+
+      '<div class="meter"><i style="width:'+(lvl*20)+'%"></i></div>'+
+      '<button class="btn"'+(lvl>=5?" disabled":"")+' onclick="act(\'decor\',\''+p.id+'\')">'+(lvl>=5?"مكتمل":"تزيين ("+cost+" 🪙)")+'</button></div>';
+  });
+  return html;
+};
+
+function outfitScore(o){
+  var base = 40;
+  if (o.kind === "royal") base += 14;
+  if (o.kind === "star") base += 18;
+  if (o.kind === "armor") base += 12;
+  return base + (o.color.length % 7) * 3 + ((o.name.length * 7) % 11);
+}
+SCREENS.contest = function(){
+  var today = todayStr();
+  var done = S.girl.contestDay === today;
+  var best = 0;
+  S.girl.outfits.forEach(function(o){ if (o.score > best) best = o.score; });
+  var html = '<div class="title">منصة العروض الكونية التنافسية</div><div class="sub">شاركي تصميمك في مسابقة الأزياء الأسبوعية</div>'+
+    '<div class="card"><h3>🏆 مسابقة هذا الأسبوع</h3>'+
+      '<div class="stat"><span>أفضل تصميم لديك</span><b>'+(best? best+" نقطة" : "لا يوجد بعد")+'</b></div>'+
+      '<div class="stat"><span>مشاركاتك</span><b>'+(S.girl.contests||0)+'</b></div>'+
+      '<div class="small">المسابقة تُفتح مرة كل يوم، والجائزة بلورات سحرية.</div>'+
+      (done ? '<div class="chip on">شاركتِ اليوم — عودي غدًا</div>' :
+        '<button class="btn gold"'+(best? '' : ' disabled')+' onclick="act(\'contest\')">'+(best?'تقديم التصميم':'صممي إطلالة أولًا')+'</button>')+
+    '</div>';
+  html += '<div class="card"><h3>لوحة المتصدرات</h3>';
+  var names = ["سيلين من الأندروميدا","نوفا كوين","لونا الظلال","أريا البلورات","بطلة المجرة (أنتِ)"];
+  names.forEach(function(n,i){
+    var pts = [96, 91, 88, 84, best][i] || 0;
+    html += '<div class="rank '+(i===4 && best>=88 ? "top":"")+'"><span>'+n+'</span><b>'+pts+'</b></div>';
+  });
+  html += '</div>';
+  return html;
+};
+
+SCREENS.photo = function(){
+  var bg = T.photoBg || "nebula";
+  var bgCls = bg==="nebula"?"bgNebula":(bg==="planet"?"bgPlanet":"bgPalace");
+  return '<div class="title">استوديو التقاط الصور الفضائية</div><div class="sub">صور تذكارية مع خلفيات المجرات والكواكب</div>'+
+    '<div class="photoCard '+bgCls+'">'+avatarHTML()+
+      '<div style="font-weight:700">'+S.girl.name+'</div>'+
+      '<div class="small">'+GOWNS.filter(function(x){return x.id===S.girl.gown;})[0].n+' · '+(S.girl.photos||0)+' صورة</div>'+
+    '</div>'+
+    '<div class="card"><h3>اختاري الخلفية</h3><div class="comboRow">'+
+      '<span class="chip '+(bg==="nebula"?"on":"")+'" onclick="act(\'photoBg\',\'nebula\')">سحابة بنفسجية</span>'+
+      '<span class="chip '+(bg==="planet"?"on":"")+'" onclick="act(\'photoBg\',\'planet\')">كوكب أزرق</span>'+
+      '<span class="chip '+(bg==="palace"?"on":"")+'" onclick="act(\'photoBg\',\'palace\')">قصر ملكي</span>'+
+    '</div>'+
+    '<button class="btn gold" onclick="act(\'snap\')">📸 التقطي الصورة التذكارية</button></div>';
+};
+
+/* ================= القسم 4: المعارك ================= */
+SCREENS.war = function(){
+  return '<div class="title">المعارك الفضائية وحروب الظلام</div><div class="sub">'+fmt(S.battles.win)+' انتصار · '+fmt(S.planets)+' كوكب محرر</div>'+
+    '<div class="card"><h3>قوة الأسطول</h3>'+
+      '<div class="stat"><span>الهجوم</span><b>'+power()+'</b></div>'+
+      '<div class="stat"><span>الدفاع</span><b>'+armor()+'</b></div>'+
+      '<div class="stat"><span>التملّص</span><b>'+Math.round(dodge()*100)+'%</b></div>'+
+    '</div>'+
+    '<button class="btn" onclick="go(\'warroom\')">🗺️ غرفة العمليات الحربية</button>'+
+    '<button class="btn cyan" onclick="go(\'arena\')">🛡️ حلبة الدفاع الاستراتيجي</button>'+
+    '<button class="btn gold" onclick="go(\'puzzle\')">🗝️ مغامرات الألغاز والرموز الأثرية</button>'+
+    '<button class="btn pink" onclick="go(\'duel\')">⚔️ ساحة المبارزات الأسطورية</button>'+
+    '<button class="btn" onclick="go(\'towers\')">🔭 منظومة الدفاع المداري التلقائي</button>';
+};
+
+function planetName(i){
+  var names = ["كوكب الرماد البنفسجي","عالم الرياح الزرقاء","كوكب العيون السبع","أرض البلور الصامت","مدينة السديم المفقود"];
+  return names[i % names.length];
+}
+SCREENS.warroom = function(){
+  var targets = [];
+  for (var i=0;i<3;i++){
+    targets.push({i:i, n:planetName(i + S.planets), p: 22 + S.planets*6 + i*9});
+  }
+  var html = '<div class="title">غرفة العمليات الحربية</div><div class="sub">خططي لغزو الكواكب وتحريرها</div>';
+  targets.forEach(function(t){
+    html += '<div class="card"><h3>🪐 '+t.n+'</h3>'+
+      '<div class="stat"><span>قوة الحامية</span><b>'+t.p+'</b></div>'+
+      '<div class="stat"><span>فرصة النصر التقديرية</span><b>'+Math.round(chanceVs(t.p)*100)+'%</b></div>'+
+      '<button class="btn gold" onclick="act(\'attack\','+t.i+')">بدء الهجوم</button></div>';
+  });
+  html += '<button class="btn cyan" onclick="act(\'autoBattle\')">معركة سريعة ضد أقرب هدف</button>';
+  return html;
+};
+function chanceVs(enemy){
+  var c = 0.35 + (power() + S.ship.eWeap*0.15 - enemy)/50 + S.ship.eSpeed*0.002;
+  return Math.max(.1, Math.min(.95, c));
+}
+function battleWin(){
+  var loot = {coin: 120 + S.planets*20, dark: 15 + S.planets*3, crystal: rnd(1,3)};
+  S.planets++; S.battles.win++; S.debris++; addXp(25);
+  S.daily.battle++;
+  give(loot, true);
+  toast("نصر! "+rewardText(loot)+" · كوكب جديد");
+  sfx("success"); say("انتصرتِ! كوكب جديد انضم إلى إمبراطوريتك");
+  save();
+}
+function battleLose(){
+  var loss = Math.min(S.dark, 12);
+  S.dark -= loss; addXp(8); save();
+  toast("تراجعنا… خسرت "+loss+" 🌀 لكن الطاقم نجا");
+  sfx("error"); say("تراجعنا هذه المرة، لكن الأسطول سيعود أقوى");
+}
+
+SCREENS.arena = function(){
+  var w = S.battles.wave;
+  var enemy = 25 + w*10;
+  return '<div class="title">حلبة الدفاع الاستراتيجي</div><div class="sub">تصدي لهجمات الأعداء والوحوش الفضائية</div>'+
+    '<div class="card"><h3>الموجة '+(w+1)+'</h3>'+
+      '<div class="stat"><span>قوة الهجوم</span><b>'+enemy+'</b></div>'+
+      '<div class="stat"><span>دروعك</span><b>'+armor()+'</b></div>'+
+      '<div class="stat"><span>أعلى موجة وصلتِ لها</span><b>'+(S.bestWave||0)+'</b></div>'+
+      '<button class="btn cyan" onclick="act(\'wave\')">التصدي للموجة</button></div>'+
+    '<div class="card"><h3>مكافأة الموجة</h3><p>كل موجة تنتهي تعطيك بلورات سحرية وعناصر نادرة، والموجات تزداد صعوبة.</p></div>';
+};
+
+var PUZZLES = [
+  {q:"ثلاثة أقمار، كل قمر يدور حول الآخر. أيّها في المركز؟", o:["القمر الصغير","القمر الأوسط","القمر الكبير"], a:2},
+  {q:"منقوش على البوابة: «أنا أُرى في الظلام ولا أُرى في النور». ما هو؟", o:["النجم","الظل","الضوء"], a:1},
+  {q:"أربعة عروش، وخمس بلورات. كم بلورة تحتاجين لتجلس كل ملكة على بلورتين؟", o:["3","4","5"], a:0}
+];
+SCREENS.puzzle = function(){
+  var idx = S.puzzleIdx || 0;
+  if (idx >= PUZZLES.length){
+    return '<div class="title">البوابات السرية</div><div class="sub">فتحتِ كل البوابات الأثرية</div>'+
+      '<div class="card"><h3>🗝️ أسرار الحضارات</h3><p>حللتِ كل الشفرات القديمة، والمناطق المحظورة أصبحت مفتوحة أمامك.</p>'+
+      '<button class="btn ghost" onclick="act(\'resetPuzzle\')">إعادة الألغاز</button></div>';
+  }
+  var p = PUZZLES[idx];
+  var html = '<div class="title">مغامرات الألغاز والرموز الأثرية</div><div class="sub">اللغز '+(idx+1)+' من '+PUZZLES.length+'</div>'+
+    '<div class="card"><h3>🗝️ '+p.q+'</h3>';
+  p.o.forEach(function(o,i){
+    html += '<button class="btn ghost" onclick="act(\'answer\','+i+')">'+o+'</button>';
+  });
+  html += '</div>';
+  return html;
+};
+
+SCREENS.duel = function(){
+  var e = 24 + (S.battles.duel||0)*7;
+  return '<div class="title">ساحة المبارزات الأسطورية</div><div class="sub">تحديات قتالية فردية بمهارات البطلة</div>'+
+    '<div class="card"><h3>الخصم: فارس الظل رقم '+((S.battles.duel||0)+1)+'</h3>'+
+      '<div class="stat"><span>قوة الخصم</span><b>'+e+'</b></div>'+
+      '<div class="stat"><span>انتصاراتك في المبارزات</span><b>'+(S.battles.duel||0)+'</b></div></div>'+
+    '<button class="btn gold" onclick="act(\'duel\',\'sword\')">⚔️ سيف النجوم (+10 هجوم)</button>'+
+    '<button class="btn cyan" onclick="act(\'duel\',\'shield\')">🛡️ درع الشفق (+12 دفاع)</button>'+
+    '<button class="btn pink" onclick="act(\'duel\',\'cry\')">🌠 صرخة المجرة (تملّص عالٍ)</button>';
+};
+
+SCREENS.towers = function(){
+  var t = S.battles.towers;
+  var cost = {dark: 40 + t*25, rare: 10 + t*6};
+  return '<div class="title">منظومة الدفاع المداري التلقائي</div><div class="sub">أبراج ليزرية تحمي الكوكب من الهجمات</div>'+
+    '<div class="card"><h3>🔭 الأبراج الليزرية</h3>'+
+      '<div class="stat"><span>عدد الأبراج</span><b>'+t+'</b></div>'+
+      '<div class="stat"><span>مكافأة الدروع</span><b>+'+(t*3)+'</b></div>'+
+      '<div class="small">التكلفة: '+payText(cost)+'</div>'+
+      '<button class="btn cyan" onclick="act(\'tower\')">ترقية البرج</button></div>';
+};
+
+/* ================= القسم 5: التطوير ================= */
+SCREENS.tech = function(){
+  return '<div class="title">التطوير والتقنيات المحظورة</div><div class="sub">أسرار لا يعرفها أحد في المجرات</div>'+
+    '<button class="btn pink" onclick="go(\'lab\')">🧪 المعمل السري</button>'+
+    '<button class="btn" onclick="go(\'academy\')">🎓 أكاديمية القادة</button>'+
+    '<button class="btn cyan" onclick="go(\'darklab\')">🌀 مختبر الطاقة المظلمة</button>'+
+    '<button class="btn gold" onclick="go(\'archive\')">📚 أرشيف التكنولوجيا القديمة</button>';
+};
+
+var CREEDS = [
+  {id:"shadow", n:"سلاح الظل الشامل", c:{dark:40, rare:15, crystal:5}, d:"سلاح دمار شامل يمنح الأسطول ميزة خارقة", bonus:6},
+  {id:"warp", n:"محرك الالتواء الأبدي", c:{dark:60, rare:20}, d:"سرعة لا تُلحق، تزيد فرصة التملّص", bonus:5},
+  {id:"glass", n:"درع الزجاج الكوني", c:{dark:35, crystal:12}, d:"درع يعكس نصف الضرر", bonus:4}
+];
+SCREENS.lab = function(){
+  var html = '<div class="title">المعمل السري</div><div class="sub">دمج المواد النادرة لاكتشاف تقنيات خارقة</div>';
+  CREEDS.forEach(function(c){
+    var owned = S.tech.creed === c.id;
+    html += '<div class="card"><h3>🧪 '+c.n+'</h3><p>'+c.d+'</p>'+
+      '<div class="small">التكلفة: '+payText(c.c)+'</div>'+
+      (owned ? '<div class="chip on">مفعّل · قوة +'+c.bonus+'</div>' :
+        '<button class="btn pink" onclick="act(\'craft\',\''+c.id+'\')">تصنيع التقنية</button>')+
+    '</div>';
+  });
+  return html;
+};
+
+var LEADERS = [
+  {n:"قائدة الأسطول", ic:"🛡️", d:"تزيد قوة الهجوم"},
+  {n:"مهندسة الدروع", ic:"⚙️", d:"تزيد متانة السفينة"},
+  {n:"حكيمة النجوم", ic:"🔮", d:"تزيد مكافآت الاستكشاف"}
+];
+SCREENS.academy = function(){
+  var html = '<div class="title">أكاديمية القادة</div><div class="sub">درّبي قادة الأسطول وطاقم السفن</div>';
+  LEADERS.forEach(function(l,i){
+    var lvl = S.tech.leaders[i] || 0;
+    var cost = 80 + lvl*60;
+    html += '<div class="card"><h3>'+l.ic+' '+l.n+'</h3><p>'+l.d+'</p>'+
+      '<div class="stat"><span>المستوى</span><b>'+lvl+' / 10</b></div>'+
+      '<div class="meter"><i style="width:'+(lvl*10)+'%"></i></div>'+
+      '<button class="btn"'+(lvl>=10?" disabled":"")+' onclick="act(\'train\','+i+')">'+(lvl>=10?"أكملت التدريب":"تدريب ("+cost+" 🪙)")+'</button></div>';
+  });
+  return html;
+};
+
+SCREENS.darklab = function(){
+  return '<div class="title">مختبر الطاقة المظلمة</div><div class="sub">تجارب علمية متقدمة بمخاطر محسوبة</div>'+
+    '<div class="card"><h3>🌀 التجربة الكونية</h3>'+
+      '<p>حقن الطاقة المظلمة في قلب المفاعل قد يعطيك بلورات أو عناصر نادرة… أو يحرق طاقة المحرك.</p>'+
+      '<div class="stat"><span>مستوى أمان المختبر</span><b>'+(S.tech.dark||0)+'</b></div>'+
+      '<div class="small">التكلفة: 15 🌀</div>'+
+      '<button class="btn cyan" onclick="act(\'experiment\')">بدء التجربة</button>'+
+      '<div class="small">كل نجاح يرفع مستوى الأمان ويقلل المخاطرة.</div></div>';
+};
+
+var ARCHIVE = [
+  {id:"a1", n:"شيفرة المحرك الأول", d:"تقنية محرك تسبق عصرها", bonus:"قوة +4"},
+  {id:"a2", n:"نقش درع الآلهة", d:"درع لا يخترقه ليزر عادي", bonus:"دروع +1"},
+  {id:"a3", n:"خريطة الطرق المفقودة", d:"مسارات مختصرة بين المجرات", bonus:"مسارات أرخص"},
+  {id:"a4", n:"سجل الحرب الأزلية", d:"كيف سقطت إمبراطوريات الظلال", bonus:"مكافأة معارك +10%"}
+];
+SCREENS.archive = function(){
+  var html = '<div class="title">أرشيف التكنولوجيا القديمة</div><div class="sub">أسرار الحضارات المفقودة</div>';
+  ARCHIVE.forEach(function(a){
+    var got = (S.tech.archive||[]).indexOf(a.id) >= 0;
+    html += '<div class="card"><h3>📚 '+a.n+'</h3><p>'+a.d+'</p>'+
+      (got ? '<div class="chip on">مفكوك · '+a.bonus+'</div>' :
+        '<button class="btn gold" onclick="act(\'unlockArchive\',\''+a.id+'\')">فك الشيفرة (8 ✨)</button>')+
+    '</div>';
+  });
+  return html;
+};
+
+/* ================= القسم 6: المهام ================= */
+var STORY = [
+  {t:"نداء من أعماق الكون", d:"إشارة غامضة تصل من سديم الظلال… امسحي الفضاء بالرادار لتكتشفي مصدرها.", chk:function(){return S.scans>=1;}, r:{crystal:10, coin:150}},
+  {t:"أول مستعمرة", d:"ابنِ مفاعلًا نوويًا لتثبيت أول مستعمرة على كوكب قريب.", chk:function(){return S.colony.reactor>=1;}, r:{dark:40, rare:15}},
+  {t:"تحالف مع الزورانيين", d:"الزورانيون لا يحالفون إلا من يثقون به. اعقدي تحالفًا معهم.", chk:function(){return S.allies.indexOf("zur")>=0;}, r:{rare:25, coin:200}},
+  {t:"معركة الفجر المظلم", d:"أسطول الظل يهاجم حدودك. انتصري في أول معركة كبرى.", chk:function(){return S.battles.win>=1;}, r:{coin:300, crystal:8}},
+  {t:"خزانة الحضارات", d:"افكّي شيفرتين من الأرشيف القديم لتفتحي طريق الأسرار.", chk:function(){return (S.tech.archive||[]).length>=2;}, r:{crystal:20, dark:50}},
+  {t:"تاج أساطير الظلال", d:"حرري ثلاثة كواكب واجمعي تحت حكمك مجرة كاملة.", chk:function(){return S.planets>=3;}, r:{coin:1000, crystal:30}}
+];
+SCREENS.quest = function(){
+  var i = S.story;
+  var html = '<div class="title">المهام والقصة التفاعلية</div><div class="sub">الأحداث الدرامية التي تكشف أسرار قوى الشر</div>';
+  html += '<div class="card glow"><h3>📖 '+STORY[Math.min(i, STORY.length-1)].t+'</h3>'+
+    '<p>'+STORY[Math.min(i, STORY.length-1)].d+'</p>'+
+    '<div class="stat"><span>التقدم</span><b>'+Math.min(i, STORY.length)+' / '+STORY.length+'</b></div>'+
+    '<div class="meter"><i style="width:'+(Math.min(i,STORY.length)/STORY.length*100)+'%"></i></div>'+
+    (i < STORY.length && STORY[i].chk() ? '<button class="btn gold" onclick="act(\'claimStory\')">استلام المكافأة والانتقال للمهمة التالية</button>' :
+      (i < STORY.length ? '<div class="small">أكملي الشرط ثم عودي لاستلام المكافأة.</div>' : '<div class="chip on">أكملتِ القصة الرئيسية</div>'))+
+    '</div>';
+  html += '<button class="btn" onclick="go(\'daily\')">🌙 المهام اليومية والمواسم التنافسية</button>'+
+    '<button class="btn cyan" onclick="go(\'ach\')">🏅 سجل الإنجازات والأوسمة الفضائية</button>'+
+    '<button class="btn pink" onclick="go(\'season\')">🎉 نظام الأحداث الموسمية الكبرى</button>';
+  return html;
+};
+
+function dailyInit(){
+  if (S.daily.date !== todayStr()){
+    S.daily = {date: todayStr(), battle:0, outfit:0, photo:0, claimed:[]};
+    save();
+  }
+}
+SCREENS.daily = function(){
+  dailyInit();
+  var d = S.daily;
+  var tasks = [
+    {k:"battle", n:"انتصري في معركة واحدة", goal:1, r:{coin:200}},
+    {k:"outfit", n:"صممي إطلالة جديدة في الاستوديو", goal:1, r:{crystal:4}},
+    {k:"photo", n:"التقطي صورة تذكارية", goal:1, r:{coin:120, dark:10}}
+  ];
+  var html = '<div class="title">المهام اليومية والمواسم</div><div class="sub">مهام سريعة ومتجددة كل يوم</div>';
+  tasks.forEach(function(t){
+    var done = (d[t.k]||0) >= t.goal;
+    var claimed = d.claimed.indexOf(t.k) >= 0;
+    html += '<div class="card"><h3>🌙 '+t.n+'</h3>'+
+      '<div class="stat"><span>التقدم</span><b>'+Math.min(d[t.k]||0, t.goal)+' / '+t.goal+'</b></div>'+
+      (claimed ? '<div class="chip on">تم الاستلام</div>' :
+        '<button class="btn gold"'+(done?"":" disabled")+' onclick="act(\'claimDaily\',\''+t.k+'\')">'+(done?"استلام المكافأة "+rewardText(t.r):"لم تكتمل بعد")+'</button>')+
+      '</div>';
+  });
+  html += '<button class="btn ghost" onclick="act(\'openSeason\')">🎉 الأحداث الموسمية الكبرى</button>';
+  return html;
+};
+
+var ACH = [
+  {id:"scan1", n:"عيون الرادار", d:"مسح الفضاء أول مرة", chk:function(){return S.scans>=1;}},
+  {id:"win3", n:"قاهر الظلال", d:"الفوز بثلاث معارك", chk:function(){return S.battles.win>=3;}},
+  {id:"planets5", n:"حاكم المجرة", d:"تحرير خمسة كواكب", chk:function(){return S.planets>=5;}},
+  {id:"outfits5", n:"مصممة الأكوان", d:"حفظ خمسة تصاميم", chk:function(){return S.girl.outfits.length>=5;}},
+  {id:"photos5", n:"عدسة النجوم", d:"التقاط خمس صور", chk:function(){return S.girl.photos>=5;}},
+  {id:"lvl5", n:"أسطورة صاعدة", d:"الوصول للمستوى الخامس", chk:function(){return level()>=5;}},
+  {id:"allies3", n:"صانعة السلام", d:"تحالف مع ثلاث حضارات", chk:function(){return S.allies.length>=3;}},
+  {id:"arch4", n:"حارسة الأسرار", d:"فك كل شيفرات الأرشيف", chk:function(){return (S.tech.archive||[]).length>=4;}}
+];
+SCREENS.ach = function(){
+  var got = 0;
+  var html = '<div class="title">سجل الإنجازات والأوسمة الفضائية</div><div class="sub">التحديات المكتملة والأوسمة التي حصلتِ عليها</div>';
+  ACH.forEach(function(a){
+    var ok = a.chk(); if (ok) got++;
+    html += '<div class="card"><h3>'+(ok?"🏅 ":"🔒 ")+a.n+'</h3><p>'+a.d+'</p>'+
+      (ok ? '<div class="chip on">مكتمل</div>' : '<div class="chip">قيد التقدم</div>')+'</div>';
+  });
+  html += '<div class="card"><h3>الإجمالي</h3><div class="stat"><span>أوسمة</span><b>'+got+' / '+ACH.length+'</b></div></div>';
+  return html;
+};
+
+var EVENTS = [
+  {n:"مهرجان البلورات المضيئة", d:"بلورات المجرة تتوهج — مكافآت البلورات مضاعفة هذا الأسبوع.", r:{crystal:12}},
+  {n:"أسبوع الأزياء الكونية", d:"بنات الأكوان يتنافسن — مسابقة الأزياء مفتوحة بجوائز إضافية.", r:{coin:250}},
+  {n:"حرب الظلال الكبرى", d:"أساطيل الظل تتحرك — انتصارات المعارك تعطي مكافآت أكبر.", r:{dark:60}},
+  {n:"مزاد الحضارات القديمة", d:"قطع أثرية تباع بالعملات — فرصة لشراء بلورات بسعر أقل.", r:{rare:20}}
+];
+function seasonIdx(){ return Math.floor(Date.now()/(7*86400000)) % EVENTS.length; }
+SCREENS.season = function(){
+  var e = EVENTS[seasonIdx()];
+  var claimedKey = "season" + seasonIdx();
+  var claimed = (S.seasonClaimed || []).indexOf(claimedKey) >= 0;
+  return '<div class="title">الأحداث الموسمية الكبرى</div><div class="sub">فعاليات مؤقتة وقصص خاصة تتغير كل أسبوع</div>'+
+    '<div class="card glow"><h3>🎉 '+e.n+'</h3><p>'+e.d+'</p>'+
+      '<div class="stat"><span>المكافأة</span><b>'+rewardText(e.r)+'</b></div>'+
+      (claimed ? '<div class="chip on">حصلتِ على المكافأة هذا الأسبوع</div>' :
+        '<button class="btn pink" onclick="act(\'claimSeason\')">المشاركة في الحدث</button>')+
+    '</div>'+
+    '<div class="card"><h3>الأحداث القادمة</h3><div class="small">كل أسبوع يظهر حدث جديد بقصة ومكافأة مختلفة، فتابعي المجرة.</div></div>';
+};
+
+/* ================= الأفعال ================= */
+function act(a, arg){
+  switch(a){
+  case "mute":
+    S.muted = !S.muted; save(); sfx("click"); render(); break;
+
+  case "supply":
+    if (cdLeft("supply") > 0) return;
+    give({coin:60, dark:15}); startCd("supply", 60); sfx("collect"); render(); break;
+
+  /* ---- السفينة ---- */
+  case "route": {
+    var r = ROUTES[+arg];
+    if (!pay(r.c)) break;
+    S.routes++; addXp(5);
+    var roll = Math.random();
+    var loot;
+    if (roll < .5) loot = {dark: rnd(15,30), rare: rnd(3,8)};
+    else if (roll < .8) loot = {crystal: rnd(2,5), coin: rnd(80,160)};
+    else loot = {rare: rnd(8,14), food: rnd(10,20)};
+    give(loot, true);
+    toast("وصلتِ عبر "+r.n+" — "+rewardText(loot));
+    sfx("success"); say("وصلنا بسلام إلى "+r.n); save(); render();
+    break;
+  }
+  case "scan": {
+    if (!pay({crystal:2})) break;
+    S.scans++;
+    var p = rnd(12, 26 + S.planets*4);
+    T.threat = {name:"أسطول الظل "+["الأسود","الأرجواني","الرمادي"][rnd(0,2)], power:p, done:null};
+    sfx("bell"); say("الرادار كشف تهديدًا بقوة "+p); save(); render(); break;
+  }
+  case "repel": {
+    var t = T.threat; if (!t || t.done) break;
+    if (armor() + rnd(0,8) >= t.power){
+      t.done = "win"; S.threats++; give({crystal:rnd(1,4), rare:rnd(2,6), coin:rnd(60,120)}, true);
+      toast("صُدّ التهديد! غنائم ثمينة"); sfx("success"); say("دروعنا صمدت، والعدو هرب");
+    } else {
+      t.done = "lose"; S.dark = Math.max(0, S.dark - 10);
+      toast("اخترق العدو الدروع وخسرت 10 🌀"); sfx("error");
+    }
+    save(); render(); break;
+  }
+  case "upg": {
+    var costMap = {
+      weap: {dark: 20 + S.ship.weap*12, rare: 4 + S.ship.weap*2},
+      shield: {dark: 18 + S.ship.shield*10, crystal: 3 + S.ship.shield},
+      engine: {dark: 30 + S.ship.engine*18, crystal: 5 + S.ship.engine*2}
+    };
+    var cost = costMap[arg];
+    if (!cost){ // gear
+      cost = {dark: 25 + S.upg.gear*15, rare: 6 + S.upg.gear*3};
+      if (!pay(cost)) break;
+      S.upg.gear++; addXp(10);
+      toast("عتاد الطاقم أصبح مستوى "+S.upg.gear); sfx("buy"); say("عتاد الطاقم تطوّر"); save(); render(); break;
+    }
+    if (!pay(cost)) break;
+    S.ship[arg]++; addXp(10);
+    toast("تمت الترقية — المستوى "+S.ship[arg]); sfx("buy"); say("ترقية ناجحة"); save(); render(); break;
+  }
+  case "alloc": {
+    var parts = arg.split(","); var k = parts[0], d = parseInt(parts[1],10);
+    var ship = S.ship;
+    var newVal = Math.max(0, Math.min(100, ship[k] + d));
+    if (newVal === ship[k]) break;
+    var others = ["eShield","eWeap","eSpeed"].filter(function(x){ return x !== k; });
+    var rest = 100 - newVal;
+    var osum = ship[others[0]] + ship[others[1]];
+    if (osum > 0){
+      ship[others[0]] = Math.round(rest * ship[others[0]] / osum);
+      ship[others[1]] = rest - ship[others[0]];
+    } else {
+      ship[others[0]] = Math.round(rest/2);
+      ship[others[1]] = rest - ship[others[0]];
+    }
+    ship[k] = newVal;
+    sfx("click"); save(); render(); break;
+  }
+  case "preset": {
+    if (arg === "def") S.ship.eShield = 60, S.ship.eWeap = 20, S.ship.eSpeed = 20;
+    if (arg === "atk") S.ship.eShield = 20, S.ship.eWeap = 60, S.ship.eSpeed = 20;
+    if (arg === "bal") S.ship.eShield = 34, S.ship.eWeap = 33, S.ship.eSpeed = 33;
+    sfx("click"); save(); render(); break;
+  }
+  case "droneBuy":
+    if (!pay({dark:12, rare:4})) break;
+    S.drones++; sfx("buy"); toast("مسيرة جديدة جاهزة للإطلاق"); save(); render(); break;
+  case "droneSend": {
+    if (S.drones <= 0){ sfx("error"); toast("لا توجد مسيرات — صنّعي واحدة أولًا"); break; }
+    S.drones--; S.droneLaunched = (S.droneLaunched||0)+1;
+    var d2 = {rare: rnd(5,10), dark: rnd(4,9)};
+    give(d2, true);
+    toast("المسيرة عادت بالبيانات: "+rewardText(d2));
+    sfx("collect"); say("المسيرة رصدت عناصر نادرة"); save(); render(); break;
+  }
+
+  /* ---- الكواكب ---- */
+  case "build": {
+    var b = S.colony, k = arg;
+    var costs = {
+      defense: {dark:25+b.defense*18, rare:5+b.defense*4},
+      reactor: {dark:20+b.reactor*15, crystal:2+b.reactor},
+      lab: {dark:30+b.lab*18, rare:8+b.lab*5},
+      dome: {coin:200+b.dome*140, dark:15+b.dome*10},
+      recycle: {coin:250+b.recycle*150, dark:20+b.recycle*12}
+    };
+    if (!pay(costs[k])) break;
+    b[k]++; addXp(10);
+    toast("تم بناء/ترقية "+k+" — المستوى "+b[k]);
+    sfx("buy"); say("البناء اكتمل"); save(); render(); break;
+  }
+  case "ally": {
+    var race = RACES.filter(function(x){return x.id===arg;})[0];
+    if (!race) break;
+    if (!pay(race.ally)) break;
+    S.allies.push(race.id); sfx("bell"); say("تحالف جديد مع "+race.n);
+    toast("تحالف مع "+race.n+" تم بنجاح"); save(); render(); break;
+  }
+  case "exch": {
+    if (arg === "darkrare"){ if (!pay({dark:10})) break; give({rare:12}); }
+    else { if (!pay({rare:15})) break; give({crystal:5}); }
+    sfx("coin"); render(); break;
+  }
+  case "plant":
+    if (!pay({coin:25})) break;
+    startCd("farm", 20); sfx("click"); toast("زرعتِ بذورًا فضائية — الحصاد بعد قليل"); save(); render(); break;
+  case "harvest": {
+    if (cdLeft("harvest") > 0) return;
+    var amount = 15 + S.colony.dome*10;
+    give({food: amount}); startCd("harvest", 45); sfx("collect");
+    say("حصاد وفير من القبة الزجاجية"); render(); break;
+  }
+  case "sellFood":
+    if ((S.food||0) < 20){ sfx("error"); toast("لا يكفي الغذاء"); break; }
+    S.food -= 20; give({coin:60}); sfx("coin"); render(); break;
+  case "recycle":
+    if ((S.debris||0) < 1){ sfx("error"); toast("لا يوجد حطام — انتصري في معركة أولًا"); break; }
+    S.debris--; give({rare: 2 + S.colony.recycle}); sfx("collect"); render(); break;
+
+  /* ---- الموضة ---- */
+  case "selGown": S.girl.gown = arg; sfx("click"); save(); render(); break;
+  case "selGownColor": S.girl.gownColor = arg; sfx("click"); save(); render(); break;
+  case "hair": S.girl.hair = arg; sfx("click"); save(); render(); break;
+  case "hairColor": S.girl.hairColor = arg; sfx("click"); save(); render(); break;
+  case "makeup": S.girl.makeup = arg; sfx("click"); save(); render(); break;
+  case "saveOutfit": {
+    var g = S.girl;
+    var score = outfitScore({kind: g.gown, color: g.gownColor, name: GOWNS.filter(function(x){return x.id===g.gown;})[0].n});
+    g.outfits.push({n: GOWNS.filter(function(x){return x.id===g.gown;})[0].n + " " + g.gownColor, kind: g.gown, color: g.gownColor, score: score});
+    S.daily.outfit++; addXp(8);
+    sfx("bell"); toast("التصميم حُفظ في الخزانة · "+score+" نقطة");
+    say("تصميم رائع يا بطلة المجرة"); save(); render(); break;
+  }
+  case "decor": {
+    var lvl = S.girl.palace[arg] || 0;
+    if (lvl >= 5){ toast("هذه القاعة مكتملة التزيين"); break; }
+    var cost = 150 + lvl*120;
+    if (!pay({coin: cost})) break;
+    S.girl.palace[arg] = lvl + 1;
+    sfx("buy"); toast("تزيين القاعة — المستوى "+(lvl+1)); save(); render(); break;
+  }
+  case "contest": {
+    var today = todayStr();
+    if (S.girl.contestDay === today){ toast("شاركتِ اليوم بالفعل"); break; }
+    var best = 0;
+    S.girl.outfits.forEach(function(o){ if (o.score > best) best = o.score; });
+    if (!best){ sfx("error"); toast("صممي إطلالة أولًا"); break; }
+    S.girl.contestDay = today; S.girl.contests = (S.girl.contests||0)+1;
+    if (best >= 88){
+      give({crystal: rnd(4,7)}, true);
+      toast("مركز متقدم! فزتِ ببلورات سحرية ✨");
+      sfx("success"); say("تصميمك أبهر لجنة التحكيم");
+    } else {
+      give({coin: 150}, true);
+      toast("مشاركة جميلة — 150 🪙 مكافأة تشجيعية");
+      sfx("coin");
+    }
+    save(); render(); break;
+  }
+  case "photoBg": T.photoBg = arg; sfx("click"); render(); break;
+  case "snap": {
+    S.girl.photos = (S.girl.photos||0)+1; S.daily.photo++; addXp(5);
+    give({coin: 40}, true);
+    sfx("wheel"); say("صورة تذكارية رائعة تحت سماء المجرة");
+    toast("تم حفظ الصورة · "+(S.girl.photos)+" صورة في الألبوم"); save(); render(); break;
+  }
+
+  /* ---- المعارك ---- */
+  case "attack": {
+    var idx = +arg;
+    var enemy = 22 + S.planets*6 + idx*9;
+    var chance = chanceVs(enemy);
+    if (Math.random() < chance) battleWin();
+    else battleLose();
+    render(); break;
+  }
+  case "autoBattle": {
+    var enemy2 = 22 + S.planets*6;
+    if (Math.random() < chanceVs(enemy2)) battleWin(); else battleLose();
+    render(); break;
+  }
+  case "wave": {
+    var w = S.battles.wave;
+    var enemy3 = 25 + w*10;
+    if (armor() + rnd(0,10) >= enemy3){
+      S.battles.wave = w + 1;
+      S.bestWave = Math.max(S.bestWave||0, w+1);
+      S.battles.def++;
+      give({crystal: rnd(2,4), rare: rnd(4,8)}, true);
+      addXp(15);
+      toast("صمدتِ أمام الموجة "+(w+1)+"!"); sfx("success"); say("الدفاع صمد، الموجة انكسرت");
+    } else {
+      S.battles.wave = 0;
+      give({coin: 80}, true);
+      toast("سقط الدرع… عدنا للموجة الأولى مع 80 🪙 عزاء"); sfx("error");
+    }
+    save(); render(); break;
+  }
+  case "answer": {
+    var p = PUZZLES[S.puzzleIdx || 0];
+    if (+arg === p.a){
+      S.puzzleIdx = (S.puzzleIdx || 0) + 1;
+      give({crystal: 5, coin: 100}, true);
+      toast("إجابة صحيحة! فتحتِ جزءًا من البوابة"); sfx("bell");
+    } else { sfx("error"); toast("ليست الإجابة… فكّري في الرموز مرة أخرى"); }
+    save(); render(); break;
+  }
+  case "resetPuzzle": S.puzzleIdx = 0; save(); render(); break;
+  case "duel": {
+    var e = 24 + (S.battles.duel||0)*7;
+    var bonus = arg === "sword" ? 10 : (arg === "shield" ? 12 : 6);
+    if (arg === "cry"){
+      if (Math.random() < .55) { S.battles.duel++; give({coin: 220, crystal: 3}, true); toast("صرخة المجرة أربكت الخصم — فوز!"); sfx("success"); }
+      else { toast("اختفى الخصم في الظلال… تعادل"); sfx("error"); }
+    } else if (power() + bonus + rnd(0,8) >= e + 6){
+      S.battles.duel++; give({coin: 250, rare: 8}, true);
+      toast("مبارزة رائعة — انتصار أسطوري!"); sfx("success"); say("فزتِ بالمبارزة يا بطلة");
+    } else {
+      give({coin: 60}, true); toast("خسرت المبارزة لكن الطاقم تعلم درسًا");
+      sfx("error");
+    }
+    save(); render(); break;
+  }
+  case "tower": {
+    var t = S.battles.towers;
+    if (!pay({dark: 40 + t*25, rare: 10 + t*6})) break;
+    S.battles.towers++; sfx("buy"); toast("برج ليزري جديد يحمي الكوكب"); save(); render(); break;
+  }
+
+  /* ---- التطوير ---- */
+  case "craft": {
+    var c = CREEDS.filter(function(x){return x.id===arg;})[0];
+    if (!c) break;
+    if (!pay(c.c)) break;
+    S.tech.creed = c.id; sfx("bell");
+    toast(c.n+" أصبحت جاهزة — قوة +"+c.bonus); say("تقنية محظورة أُتقنت");
+    save(); render(); break;
+  }
+  case "train": {
+    var i = +arg; var lvl = S.tech.leaders[i] || 0;
+    var cost = 80 + lvl*60;
+    if (lvl >= 10){ toast("أكملت تدريب هذا القائد"); break; }
+    if (!pay({coin: cost})) break;
+    S.tech.leaders[i] = lvl + 1; addXp(6);
+    sfx("success"); toast("تدريب القائد — المستوى "+(lvl+1)); save(); render(); break;
+  }
+  case "experiment": {
+    if (!pay({dark:15})) break;
+    var safe = (S.tech.dark||0);
+    var roll = Math.random() + safe*0.03;
+    if (roll > .8){ give({crystal: rnd(5,10)}, true); S.tech.dark = safe+1; toast("نجاح مذهل! بلورات + رفع مستوى الأمان"); sfx("success"); }
+    else if (roll > .5){ give({rare: rnd(8,15)}, true); S.tech.dark = safe+1; toast("التجربة أعطت عناصر نادرة"); sfx("collect"); }
+    else { toast("التجربة فشلت واحترقت 15 🌀"); sfx("error"); }
+    save(); render(); break;
+  }
+  case "unlockArchive": {
+    if (!pay({crystal:8})) break;
+    S.tech.archive.push(arg); sfx("bell");
+    var a2 = ARCHIVE.filter(function(x){return x.id===arg;})[0];
+    toast("فككتِ شيفرة: "+a2.n+" · "+a2.bonus); say("سر جديد من أسرار الحضارات");
+    save(); render(); break;
+  }
+
+  /* ---- المهام ---- */
+  case "claimStory": {
+    var i3 = S.story;
+    if (i3 >= STORY.length) break;
+    if (!STORY[i3].chk()){ toast("لم تكتمل شروط المهمة بعد"); break; }
+    give(STORY[i3].r); S.story++; addXp(20); sfx("success");
+    say("أنجزتِ المهمة: "+STORY[Math.min(i3, STORY.length-1)].t);
+    save(); render(); break;
+  }
+  case "claimDaily": {
+    dailyInit();
+    var d = S.daily;
+    if (d.claimed.indexOf(arg) >= 0) break;
+    var task = [
+      {k:"battle", goal:1, r:{coin:200}},
+      {k:"outfit", goal:1, r:{crystal:4}},
+      {k:"photo", goal:1, r:{coin:120, dark:10}}
+    ].filter(function(x){return x.k===arg;})[0];
+    if (!task) break;
+    if ((d[arg]||0) < task.goal){ toast("لم تكتمل المهمة بعد"); break; }
+    give(task.r); d.claimed.push(arg); sfx("success"); save(); render(); break;
+  }
+  case "openSeason": go("season"); break;
+  case "claimSeason": {
+    var key = "season" + seasonIdx();
+    if (!S.seasonClaimed) S.seasonClaimed = [];
+    if (S.seasonClaimed.indexOf(key) >= 0){ toast("حصلتِ على مكافأة هذا الحدث"); break; }
+    give(EVENTS[seasonIdx()].r); S.seasonClaimed.push(key);
+    sfx("bell"); say("شاركتِ في الحدث الموسمي"); save(); render(); break;
+  }
+  case "resetState": resetState(); break;
+  default: break;
+  }
+}
+
+/* ================= تشغيل ================= */
+dailyInit();
+render();
+</script>
+</body>
+</html>
